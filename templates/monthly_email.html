@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Monthly Reminder Email</title>
+</head>
+<body>
+    <h3>Dear {{data}},</h3>
+    <h3>Below is your Blog Management Analytics </h3>
+    <p>Total no. of blogs posted: {{blog_dict['Title'] | length}} </p>
+    <p>Total no. blog categories: {{blog_dict['Category'] | length}} </p>    
+    <p>Categories in which your blogs belong to: 
+        {% for i in blog_dict['Category'] %} 
+            {{i}}, 
+        {% endfor %}
+    </p>
+    <p>Last Logged Out Time: {{t}}</p>
+    <h3>Statistics Table</h3>
+    {{blog_df.to_html() | safe}}
+    <br>
+    <p><strong>Thank you for using our service.</strong></p>
+    <br>
+
+    
+    <h3>Regards,</h3>
+    <h3>Support Team - Blog Lite</h3>
+</body>
+</html>

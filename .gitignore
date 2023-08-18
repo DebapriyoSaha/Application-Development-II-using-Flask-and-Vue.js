@@ -1,0 +1,6 @@
+/celerybeat-schedule
+/docs
+/dump.rdb
+/password.txt
+/venv
+/__pycache__
